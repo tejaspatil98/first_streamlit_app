@@ -46,4 +46,4 @@ streamlit.dataframe(my_data_rows)
 # Let's put another pick list here so they can pick the fruit they want to add to the list 
 add_my_fruit = streamlit.text_input('Which fruit would you like to add?','jackfruit')
 streamlit.write('Thanks for adding  ', add_my_fruit)
-my_cur.execute("insert into fruit_load_list values('from streamlit')")
+my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values('from streamlit')")
