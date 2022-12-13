@@ -43,6 +43,8 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
-fruit_choice = streamlit.text_input('What fruit would you like to add?','add_my_fruit')
-add_my_fruit = fruit_choice.execute("insert into pc_rivery_db.public.fruit_load_list values ('fruit_choice')")
+# Let's put another pick list here so they can pick the fruit they want to add to the list 
+add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
+
 streamlit.write('Thanks for adding ', add_my_fruit)
+my_cur.execute("INSERT into fruit_load_list values ('from Streamlit')")
